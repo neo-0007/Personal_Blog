@@ -1,0 +1,47 @@
+<!---homepage-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hrishi's Blog</title>
+    <link rel="stylesheet" href="/css/home.css" >
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="top-row">
+        <img src="images/IMG_E9282.JPG" alt="Profile Picture">
+        <div class="top-text">
+            <h1>Hrishi's Blog</h1>
+        </div>
+    </div>
+    <div class="recent-posts">
+        <h2>RECENT POSTS</h2>
+        <%for (let i=0 ; i<3 ; i++){%>
+        <div class="post-card">
+            <h3 class="post-title"><%=blogs[i].title%></h3>
+            <p class="post-date"><%=blogs[i].createdAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })%></p>
+        </div>
+        <%}%>
+        <a href="#" class="show-more">show more</a>
+    </div>
+    <div class="hrishi-list">
+        <h2>HRISHI'S LIST</h2>
+        <div class="post-card">
+            <h3 class="post-title">list item 1</h3>
+            <p class="post-date">11-11-2011</p>
+        </div>
+        <div class="post-card">
+            <h3 class="post-title">list item 2</h3>
+            <p class="post-date">11-11-2011</p>
+        </div>
+        <div class="post-card">
+            <h3 class="post-title">list item 3</h3>
+            <p class="post-date">11-11-2011</p>
+        </div>
+        <a href="#" class="show-more">show more</a>
+    </div>
+
+</body>
+</html>
