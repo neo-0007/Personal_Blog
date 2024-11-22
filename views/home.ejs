@@ -30,20 +30,15 @@
     </div>
     <div class="hrishi-list">
         <h2>BLOGS I LIKE</h2>
-        <div class="post-card">
-            <h3 class="post-title">list item 1</h3>
-            <p class="post-date">11-11-2011</p>
-        </div>
-        <div class="post-card">
-            <h3 class="post-title">list item 2</h3>
-            <p class="post-date">11-11-2011</p>
-        </div>
-        <div class="post-card">
-            <h3 class="post-title">list item 3</h3>
-            <p class="post-date">11-11-2011</p>
-        </div>
+        <%for (let i=0 ; i<3 ; i++){%>
+            <div class="post-card">
+                <a href="/like/<%= likes[i]._id %>" class="post-title"><%= likes[i].title %></a>
+                <p class="post-date">
+                    <%= likes[i].createdAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %>
+                </p>
+            </div>
+        <%}%>
         <a href="#" class="show-more">show more</a>
     </div>
-
 </body>
 </html>
