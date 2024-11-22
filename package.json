@@ -1,0 +1,25 @@
+{
+  "name": "personal-blog-hrishi",
+  "version": "1.0.0",
+  "description": "A personal blog to share my thoughts and learnings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neo-0007/Personal_Blog.git"
+  },
+  "author": "Hrishikesh Gohain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/neo-0007/Personal_Blog/issues"
+  },
+  "homepage": "https://github.com/neo-0007/Personal_Blog#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.2",
+    "nodemon": "^3.1.7"
+  }
+}
