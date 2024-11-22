@@ -73,7 +73,7 @@ app.get('/blogs',async(req,res)=>{
 app.get('/blog/:id',async(req,res)=>{
     const result = await Blog.findById(req.params.id);
     if(result){
-        return res.statusCode(200).json(result);
+        return res.render('blog',{"blog":result});
     }else{
         return res.statusCode(404).json({"msg":"Blog not found!"});
     }

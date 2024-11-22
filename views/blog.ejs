@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=blog.title%></title>
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="blog-container">
+        <h1><%= blog.title %></h1>
+        <p class="blog-author">By : <%= blog.author %></p>
+        <p class="blog-date"><%= new Date(blog.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %></p>
+        <div class="blog-content">
+            <p><%= blog.content %></p>
+        </div>
+        <% if (blog.image) { %>
+        <img src="<%= blog.image %>" alt="<%= blog.title %>">
+        <% } %>
+    </div>
+</body>
+</html>
