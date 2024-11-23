@@ -18,27 +18,37 @@
     </div>
     <div class="recent-posts">
         <h2>RECENT POSTS</h2>
-        <%for (let i=0 ; i<3 ; i++){%>
-            <div class="post-card">
-                <a href="/blog/<%= blogs[i]._id %>" class="post-title"><%= blogs[i].title %></a>
-                <p class="post-date">
-                    <%= blogs[i].createdAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %>
-                </p>
-            </div>
-        <%}%>
-        <a href="/blogs" class="show-more">show more</a>
+        <% if (blogs.length > 0) { %>
+            <% for (let i = 0; i < Math.min(3, blogs.length); i++) { %>
+                <div class="post-card">
+                    <a href="/blog/<%= blogs[i]._id %>" class="post-title"><%= blogs[i].title %></a>
+                    <p class="post-date">
+                        <%= new Date(blogs[i].createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %>
+                    </p>
+                </div>
+            <% } %>
+            <a href="/blogs" class="show-more">Show more</a>
+        <% } else { %>
+            <p>No blogs found</p>
+        <% } %>
     </div>
+
+    <!-- Blogs I Like Section -->
     <div class="hrishi-list">
         <h2>BLOGS I LIKE</h2>
-        <%for (let i=0 ; i<3 ; i++){%>
-            <div class="post-card">
-                <a href="/like/<%= likes[i]._id %>" class="post-title"><%= likes[i].title %></a>
-                <p class="post-date">
-                    <%= likes[i].createdAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %>
-                </p>
-            </div>
-        <%}%>
-        <a href="/likes" class="show-more">show more</a>
+        <% if (likes.length > 0) { %>
+            <% for (let i = 0; i < Math.min(3, likes.length); i++) { %>
+                <div class="post-card">
+                    <a href="/like/<%= likes[i]._id %>" class="post-title"><%= likes[i].title %></a>
+                    <p class="post-date">
+                        <%= new Date(likes[i].createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %>
+                    </p>
+                </div>
+            <% } %>
+            <a href="/likes" class="show-more">Show more</a>
+        <% } else { %>
+            <p>No blogs found</p>
+        <% } %>
     </div>
 </body>
 </html>
