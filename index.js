@@ -63,7 +63,7 @@ app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
-app.listen(PORT,(err)=>{
+app.listen(PORT,'0.0.0.0',(err)=>{
     if(err){
         console.log("Error occured : ",err);
     }else{
@@ -80,11 +80,7 @@ app.get('/',async(req,res)=>{
 
 app.get('/blogs',async(req,res)=>{
     const result = await Blog.find({});
-    if(result){
-        return res.statusCode(200).json(result);
-    }else{
-        return res.statusCode(400),json({"msg":"Error"})
-    }
+    res.render('allblogs',{"blogs":result});
 });
 
 app.get('/blog/:id',async(req,res)=>{
