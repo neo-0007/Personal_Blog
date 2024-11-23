@@ -114,7 +114,7 @@ app.post('/blog',async (req,res)=>{
 app.get('/likes',async (req,res)=>{
     const result = await Likes.find({});
     if(result){
-    res.status(200).json(result);
+        res.render('all-likes',{"likes":result});
     }else{
         res.status(400).json({"msg":"Error fetching blogs!"});
     }

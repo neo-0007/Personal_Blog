@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Likes</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/alllikes.css">
+</head>
+<body>
+    <div class="hrishi-list">
+        <h2>LIKES</h2>
+        <%for (let i=0 ; i< likes.length ; i++){%>
+            <div class="post-card">
+                <a href="/like/<%= likes[i]._id %>" class="post-title"><%= likes[i].title %></a>
+                <p class="post-date">
+                    <%= likes[i].createdAt.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %>
+                </p>
+            </div>
+        <%}%>
+    </div>
+</body>
+</html>
