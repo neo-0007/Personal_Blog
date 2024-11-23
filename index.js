@@ -1,13 +1,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const connectDb = require("./utils/db")
 
 const PORT = 8000;
 const app = express();
 
-mongoose
-  .connect("mongodb://127.0.0.1:27017/personal-blog-hrishi")
-  .then(() => console.log("MongoDB Connected!"))
-  .catch((err) => console.log("Error Connecting MongoDB ", err));
+connectDb.connectDb();
 
 const blogSchema = mongoose.Schema({
     title:{
