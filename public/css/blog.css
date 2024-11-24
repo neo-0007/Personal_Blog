@@ -68,3 +68,35 @@ body {
         font-size: 16px;
     }
 }
+
+.home-button {
+    display: flex;
+    justify-content: flex-end; /* Center horizontally *//* Add some spacing below the button */
+    position: relative; /* Required to position the button above other elements */
+    /* top: -30px; */
+}
+
+.home-button .btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #121212;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.home-button .btn:hover {
+    background-color: #797878; /* Darker blue on hover */
+    color: #ffffff; /* Ensure text stays white */
+    box-shadow: 0 2px #797878; /* Adjust shadow to look pressed */
+    transform: translateY(2px); /* Move button down slightly */
+}
+
+.home-button .btn:active {
+    box-shadow: 0 0 #797878; /* No shadow on click for pressed effect */
+    transform: translateY(4px); /* Move button further down */
+}
