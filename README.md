@@ -12,6 +12,6 @@ A Personal Project while Learning Backend Developement
 **Tasks :**
 - [X]  UI for Blogs and Likes
 - [X]  Footer with links to Socials
-- [ ]  Markdown support in place of txt Blogs
+- [X]  Markdown support in place of txt Blogs
 - [ ]  Authentication for Admin
 - [ ]  Admin Dashboard to add, edit and delete Blogs  
