@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const connectDb = require("./utils/db")
+const connectDb = require("./utils/db");
+const {marked} = require('marked');
 
 const PORT = 8000;
 const app = express();
@@ -84,7 +85,8 @@ app.get('/blogs',async(req,res)=>{
 app.get('/blog/:id',async(req,res)=>{
     const result = await Blog.findById(req.params.id);
     if(result){
-        return res.render('blog',{"blog":result});
+        const htmlContent = marked(result.content);
+        return res.render('blog',{"blog":result,"content":htmlContent});
     }else{
         return res.statusCode(404).json({"msg":"Blog not found!"});
     }

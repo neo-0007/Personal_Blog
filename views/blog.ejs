@@ -14,11 +14,8 @@
         <p class="blog-author">By : <%= blog.author %></p>
         <p class="blog-date"><%= new Date(blog.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) %></p>
         <div class="blog-content">
-            <p><%= blog.content %></p>
+            <p><%- content %></p>
         </div>
-        <% if (blog.image) { %>
-        <img src="<%= blog.image %>" alt="<%= blog.title %>">
-        <% } %>
         <div class="home-button">
             <a href="/" class="btn">Home</a>
         </div>
