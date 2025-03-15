@@ -72,13 +72,13 @@ app.listen(PORT,'0.0.0.0',(err)=>{
 
 
 app.get('/',async(req,res)=>{
-    const blogResults = await Blog.find({});
+    const blogResults = await Blog.find({}).sort({createdAt:-1});
     const likeResults = await Likes.find({});
     return res.render('home',{"blogs":blogResults,"likes":likeResults});
 });
 
 app.get('/blogs',async(req,res)=>{
-    const result = await Blog.find({});
+    const result = await Blog.find({}).sort({createdAt:-1});
     res.render('allblogs',{"blogs":result});
 });
 
